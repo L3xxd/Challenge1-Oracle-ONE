@@ -53,16 +53,20 @@ html{
   left:10px;
 }
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Instrucicones*/
+.header_textoInstrucciones{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 #instrucciones{
   color: #D324FF;
   width: auto;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  line-height: 0px;
+  padding-bottom:10px;
   text-align: center;
-  display:block;
-  padding-bottom:10px
   
 
 
