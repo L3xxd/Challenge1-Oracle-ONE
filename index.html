@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./trash/favicon.png"/>
+    <title>Encriptador</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header class="header">
+        <section class="header_textoDinamico">
+          <div class='console-container'>
+            <span id='text'></span>
+            <div class='console-underscore' id='console'>&#95;
+            </div>
+          </div>
+            <script  src="./js/text.js"></script>
+        </section>
+        <section class="header_textoInstrucciones">
+          <div id="instrucciones">
+            <p>[+] Solo se permiten letras minúsculas   </p>
+            <br>
+            <p>[+] Sin acentos ni caracteres especiales </p>   
+          </div>
+        </section>
+      </header>
+
+      <main class="main">
+      <section class="entradaDatos_container"> 
+          <div class="textArea_title">      
+            <h2>Entrada de Datos:</h2>
+          </div>
+          <div class="textArea_Entrada">
+            <textarea class="input" type="text" name="textoValor" id="textoValor"></textarea>
+          </div>               
+      </section>
+
+      <section class="botonesPrincipales_container">
+        <div class="botonesPrincipales">
+          <button class="botonesPrincipales" id="botonEncriptar">Encriptar</button>
+          <br><br>
+          <button class="botonesPrincipales" id="botonDesencriptar">Desencriptar</button>
+        </div>  
+        
+      </section>
+            
+      <section class="salidaDatos_container">
+        <div class="textArea_title">
+          <h2>Salida de Datos:</h2>
+        </div>
+        <div class = "textArea_Salida">
+          <input class="texto_final" type="text" id="textoFinal" readonly>
+        </div>
+
+        <div>
+          <button class="botonesPrincipales" id="botoncopiar">Copiar</button>
+        </div>
+      </section>
+   
+      <script src="./js/logica.js"></script>
+      </main>
+    
+      <footer class="footer">
+      <section class="footer_container">
+        <span class="copyright">&copy; Code By: Alejandro Balderas Rios</span>
+      </section>
+      </footer>
+    </div>
+  </body>
+</html>
