@@ -1,38 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Estilos Globales*/
-#wrapper {
-  min-height: 100%;
-  position: relative;
-}
-*{
-  font-family: 'Press Start 2P';
- 
-}
-
-.main{
-  padding-bottom: 60px
-}
-
 body {
-  background: #111; 
-  height: 100%; 
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  background:#111;
 }
-
-html{
+html,
+body {
   height: 100%;
 }
-
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Texto Dinamico*/
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Header*/
+section.header{
+  font-family: 'Press Start 2P', cursive;
+  height: 160px;
+}
 .hidden {
   opacity:0;
 }
 .console-container {
   text-align: center;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 26px;
   line-height: 20px;
   height:80%;
   width:100%;
@@ -52,7 +40,7 @@ html{
   top:-0.14em;
   left:10px;
 }
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Instrucicones*/
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Instrucicones*/
 .header_textoInstrucciones{
   width: 100%;
   align-items: center;
@@ -67,16 +55,23 @@ html{
   font-size: 12px;
   padding-bottom:10px;
   text-align: center;
-  
-
-
+}
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Main*/
+.container{
+  font-family: 'Press Start 2P', cursive;
+  /* background-color: #3a4f6a; */
+  min-height: calc(100vh - 60px -160px);
+  justify-content: center;
+  align-items: center;
 }
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Text Areas */ 
 .textArea_Entrada{
+  font-family:"Poppins";
   text-align: center;
-  padding-bottom:20px
+  padding-bottom:20px;
 }
 .textArea_Salida{
+  font-family:"Poppins";
   padding-bottom:20px;
   text-align: center;
 }
@@ -87,8 +82,10 @@ html{
   font-weight: 400;
   font-size: 10px;
   line-height: 10px;
+  font-family: 'Press Start 2P', cursive;
 }
 .input{
+  font-family:"Poppins";
   max-width: 400px;
   height: 20px;
   background-color:#292929 ;
@@ -105,6 +102,7 @@ html{
   transition: all 0.2s;  
 } 
 .texto_final{
+  font-family:"Poppins";
   max-width: 400px;
   height: 20px;
   background-color:#292929 ;
@@ -122,6 +120,7 @@ html{
 }
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Botones Global */ 
 .botonesPrincipales {
+  font-family: 'Press Start 2P', cursive;
   max-width: 400px;
 	padding: auto;
 	display: block;
@@ -149,12 +148,12 @@ html{
 	height: 60px;
 	top: 12px;
 	left: 0;
-	background-color: #145A32 ;
+	background-color: #145A32 ; 
 	border-radius: 24px;
 	z-index: -1;
   
 }
-.botonesPrincipales:hover {
+.botonesPrincipales:hover {  
 	background-color: #1E8449;
 }
 
@@ -186,34 +185,106 @@ html{
 #botoncopiar:active::after{
   top: 2px;
 }
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Fooster*/
-.footer_container{
-  position: absolute;
-  width: 100%;
-  height: 15px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  margin: 0;
-  justify-content: center;
-  align-items: center;
-  background: #000000;
-
-  position: absolute;
-  bottom: 0;
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Footer*/
+section.footer {
+  font-family:"Poppins";
+  position: relative;
   left: 0;
-
+  bottom: 12px;
+  width: 100%;
+  background: #000;
+  padding-top: 60px;
 }
-.copyright{
-  color: #FFFFFF;
-  position: absolute;
-  width: auto;
-  height: 9px;
-  left: calc(50% - 306px/2 + 9px);
-  bottom: 3px;
-  font-style: normal;
+footer {
+  font-family:"Poppins";
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 0 30px;
+}
+@media (width < 620px) {
+  footer {
+    flex-direction: column;
+  }
+  footer.bottom {
+    gap: 16px;
+    flex-direction: column-reverse;
+  }
+}
+footer > img {
+  margin-top: 10px;
+}
+@media (width >= 620px) {
+  footer {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0;
+  }
+}
+footer {
+  color: white;
+  font-family:"Poppins";
+}
+footer.top {
+  border-bottom: 2px solid #3a4f6a;
+  padding-bottom: 20px;
+  font-family:"Poppins";
+}
+footer.bottom {
+  padding: 20px 0;
+  justify-content: space-between;
+  font-family:"Poppins";
+}
+footer.top .links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.links > div {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.links > a{
+  text-decoration: none;
+  color: white;
+}
+footer h2 {
+  margin: 0;
+  font-size: 24px;
   font-weight: 400;
-  font-size: 9px;
-  line-height: 9px;
-
+  color: #f7f7f7;
+}
+.legal {
+  font-size: 18px;
+}
+.legal > a {
+  margin: 0 4px;
+}
+.legal > span {
+  margin-right: 10px;
+}
+footer.bottom .links {
+  display: flex;
+  gap: 18px;
+}
+footer.bottom .links > a {
+  font-size: 24px;
+}
+@media (width < 420px) {
+  footer {
+    text-align: center;
+    align-items: center;
+  }
+  footer.top .links {
+    grid-template-columns: 1fr;
+  }
+  footer.bottom {
+    align-items: center;
+  }
+  .legal > span {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 2px;
+  }
 }

@@ -1,73 +1,95 @@
+ <!--Version 1.1-->
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./trash/favicon.png"/>
+
     <title>Encriptador</title>
   </head>
   <body>
-    <div id="wrapper">
+    <section class="header">
       <header class="header">
-        <section class="header_textoDinamico">
-          <div class='console-container'>
-            <span id='text'></span>
-            <div class='console-underscore' id='console'>&#95;
-            </div>
-          </div>
-            <script  src="./js/text.js"></script>
-        </section>
-        <section class="header_textoInstrucciones">
-          <div id="instrucciones">
-            <h4>[+] Solo se permiten letras minúsculas   </h4>
-            <br>
-            <h4>[+] Sin acentos ni caracteres especiales </h4>   
-          </div>
-        </section>
+        <br>
+        <div class='console-container'>
+          <span id='text'></span>
+          <div class='console-underscore' id='console'>&#95;</div>
+        </div>
+        <div id="instrucciones">
+          <h4>[+] Solo se permiten letras minúsculas   </h4>
+          <h4>[+] Sin acentos ni caracteres especiales </h4>   
+        </div>
+        <script  src="./js/text.js"></script>
       </header>
-
-      <main class="main">
-      <section class="entradaDatos_container"> 
-          <div class="textArea_title">      
-            <h2>Entrada de Datos:</h2>
+    </section>
+    <br>
+    <section class="main">
+      <div class="container">
+        <div class="textArea_title">      
+          <h2>Entrada de Datos:</h2>
+        </div>
+        <div class="textArea_Entrada">
+          <textarea class="input" type="text" name="textoValor" id="textoValor"></textarea>
+        </div>               
+    </section>
+    <section class="botonesPrincipales_container">
+      <div class="botonesPrincipales">
+        <button class="botonesPrincipales" id="botonEncriptar">Encriptar</button>
+        <br><br>
+        <button class="botonesPrincipales" id="botonDesencriptar">Desencriptar</button>
+      </div>  
+    </section>
+    <section class="salidaDatos_container">
+      <div class="textArea_title">
+        <h2>Salida de Datos:</h2>
+      </div>
+      <div class = "textArea_Salida">
+        <input class="texto_final" type="text" id="textoFinal" readonly>
+      </div>
+      <div>
+        <button class="botonesPrincipales" id="botoncopiar">Copiar</button>
+      </div>
+    </section>
+    <br><br>
+    <script src="./js/logica.js"></script>
+    <section class="footer">
+      <footer class="top">
+        <img src="./trash/logo.svg" width="192" height="140" fill="none"/>
+        <div class="links">
+          <div>
+            <p><b>Oracle ONE</b></p>
           </div>
-          <div class="textArea_Entrada">
-            <textarea class="input" type="text" name="textoValor" id="textoValor"></textarea>
-          </div>               
-      </section>
-
-      <section class="botonesPrincipales_container">
-        <div class="botonesPrincipales">
-          <button class="botonesPrincipales" id="botonEncriptar">Encriptar</button>
-          <br><br>
-          <button class="botonesPrincipales" id="botonDesencriptar">Desencriptar</button>
-        </div>  
-        
-      </section>
-            
-      <section class="salidaDatos_container">
-        <div class="textArea_title">
-          <h2>Salida de Datos:</h2>
+          <div>
+            <p><b>Alura</p>
+          </div>
         </div>
-        <div class = "textArea_Salida">
-          <input class="texto_final" type="text" id="textoFinal" readonly>
-        </div>
-
-        <div>
-          <button class="botonesPrincipales" id="botoncopiar">Copiar</button>
-        </div>
-      </section>
-   
-      <script src="./js/logica.js"></script>
-      </main>
-    
-      <footer class="footer">
-      <section class="footer_container">
-        <span class="copyright">&copy; Code By: Alejandro Balderas Rios</span>
-      </section>
+        <div><p><b>Code By: Alejandro Balderas Rios. </b></p></div>
       </footer>
-    </div>
+      <footer class="bottom">
+        <div class="legal">
+          <span> © 2023 All rights reserved </span>
+          <a> License </a>
+          <a> Terms </a>
+          <a> Privacy </a>
+        </div>
+        <div class="links">
+          <a target="_blank" class="fa-brands fa-facebook" href="https://www.facebook.com/alexbalrios"></a>
+          <a target="_blank"class="fa-brands fa-instagram" href="https://www.instagram.com/l3xxd_/"></a>
+          <a target="_blank"class="fa-brands fa-github" href="https://github.com/L3xxd"></a>
+          <a target="_blank"class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/alejandro-balderas-rios/"></a>
+        </div>
+      </footer>
+    </section>
   </body>
 </html>
