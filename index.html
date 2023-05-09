@@ -1,11 +1,10 @@
- <!--Version 1.1-->
+<!--Version 2.1-->
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,81 +12,125 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/png" href="./trash/favicon.png"/>
-
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/png" href="./trash/favicon.png" />
     <title>Encriptador</title>
   </head>
   <body>
-    <section class="header">
+    <section class="main-container">
       <header class="header">
-        <br>
-        <div class='console-container'>
-          <span id='text'></span>
-          <div class='console-underscore' id='console'>&#95;</div>
+        <div class="console-container">
+          <span id="text"></span>
+          <div class="console-underscore" id="console">&#95;</div>
         </div>
-        <div id="instrucciones">
-          <h4>[+] Solo se permiten letras minúsculas   </h4>
-          <h4>[+] Sin acentos ni caracteres especiales </h4>   
+        <div class="instructions">
+          <ul>
+            <li>Solo se permiten letras minúsculas.</li>
+            <li>Sin acentos ni caracteres especiales.</li>
+          </ul>
         </div>
-        <script  src="./js/text.js"></script>
+        <script src="./js/text.js"></script>
       </header>
-    </section>
-    <br>
-    <section class="main">
-      <div class="container">
-        <div class="textArea_title">      
-          <h2>Entrada de Datos:</h2>
-        </div>
+
+      <div class="main">
         <div class="textArea_Entrada">
-          <textarea class="input" type="text" name="textoValor" id="textoValor"></textarea>
-        </div>               
-    </section>
-    <section class="botonesPrincipales_container">
-      <div class="botonesPrincipales">
-        <button class="botonesPrincipales" id="botonEncriptar">Encriptar</button>
-        <br><br>
-        <button class="botonesPrincipales" id="botonDesencriptar">Desencriptar</button>
-      </div>  
-    </section>
-    <section class="salidaDatos_container">
-      <div class="textArea_title">
-        <h2>Salida de Datos:</h2>
+          <h2>Entrada de Datos</h2>
+          <textarea
+            placeholder="Escribre tu texto aqui..."
+            id="textoValor"
+            class="input"
+            type="text"
+            name="textoValor"
+          ></textarea>
+          <script>
+            const input = document.getElementById("textoValor");
+            input.addEventListener("keyup", (e) => {
+              input.style.height = "auto";
+              let scHeight = e.target.scrollHeight;
+              input.style.height = `${scHeight}px`;
+            });
+          </script>
+        </div>
+
+        <div class="textArea_Salida">
+          <h2>Salida de Datos</h2>
+          <textarea
+            rows="10"
+            readonly
+            class="texto_final"
+            type="text"
+            id="textoFinal"
+          >
+          </textarea>
+        </div>
+        <br />
       </div>
-      <div class = "textArea_Salida">
-        <input class="texto_final" type="text" id="textoFinal" readonly>
+      <div class="buttons-secondary">
+        <button class="btn-rgb" role="button">
+          <i class="fa-solid fa-trash"></i>
+          Borrar
+        </button>
       </div>
-      <div>
-        <button class="botonesPrincipales" id="botoncopiar">Copiar</button>
+
+      <div class="buttons-primary">
+        <button id="btnEncriptar" class="button-pushable" role="button">
+          <span class="button-shadow"></span>
+          <span class="button-edge"></span>
+          <span class="button-front text">ENCRIPTAR</span>
+        </button>
+        <button id="btnDesencriptar" class="button-pushable" role="button">
+          <span class="button-shadow"></span>
+          <span class="button-edge"></span>
+          <span class="button-front text">DESENCRIPTAR</span>
+        </button>
+        <button id="btnCopiar" class="button-pushable" role="button">
+          <span class="button-shadow"></span>
+          <span class="button-edge"></span>
+          <span class="button-front text">COPTAR</span>
+        </button>
       </div>
+      
+
+      <script src="./js/logica.js"></script>
     </section>
-    <br><br>
-    <script src="./js/logica.js"></script>
-    <section class="footer">
+    <section class="footer-container">
       <footer class="top">
-        <img src="./trash/logo.svg" width="192" height="140" fill="none"/>
+        <img src="./trash/logo.svg" width="192" height="140" fill="none" />
         <div class="links">
           <div>
-            <p><b>Oracle ONE</b></p>
+            <p>Oracle ONE</p>
           </div>
           <div>
-            <p><b>Alura</p>
+            <p>Alura</p>
           </div>
         </div>
-        <div><p><b>Code By: Alejandro Balderas Rios. </b></p></div>
+        <div><p>Code By: Alejandro Balderas Rios</p></div>
       </footer>
       <footer class="bottom">
         <div class="legal">
           <span> © 2023 All rights reserved </span>
-          <a> License </a>
-          <a> Terms </a>
-          <a> Privacy </a>
         </div>
         <div class="links">
-          <a target="_blank" class="fa-brands fa-facebook" href="https://www.facebook.com/alexbalrios"></a>
-          <a target="_blank"class="fa-brands fa-instagram" href="https://www.instagram.com/l3xxd_/"></a>
-          <a target="_blank"class="fa-brands fa-github" href="https://github.com/L3xxd"></a>
-          <a target="_blank"class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/alejandro-balderas-rios/"></a>
+          <a
+            target="_blank"
+            class="fa-brands fa-facebook"
+            href="https://www.facebook.com/alexbalrios"
+          ></a>
+          <a
+            target="_blank"
+            class="fa-brands fa-instagram"
+            href="https://www.instagram.com/l3xxd_/"
+          ></a>
+          <a
+            target="_blank"
+            class="fa-brands fa-github"
+            href="https://github.com/L3xxd"
+          ></a>
+          <a
+            target="_blank"
+            class="fa-brands fa-linkedin"
+            href="https://www.linkedin.com/in/alejandro-balderas-rios/"
+          ></a>
         </div>
       </footer>
     </section>

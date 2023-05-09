@@ -6,14 +6,14 @@ function encriptar (){
     document.querySelector("#textoValor").value;
     }
 
-var btn_Encriptar = document.getElementById("botonEncriptar");
+var btn_Encriptar = document.getElementById("btnEncriptar");
 btn_Encriptar.onclick = encriptar;
 
 function desencriptar (){ var texto = document.querySelector("#textoValor").value; var textoCifrado = texto.replace(/enter/gi, "e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u");
 document.querySelector("#textoFinal").value = textoCifrado; document.querySelector("#textoValor").value;
 }
 
-var btn_Desencriptar = document.getElementById("botonDesencriptar");
+var btn_Desencriptar = document.getElementById("btnDesencriptar");
 btn_Desencriptar.onclick = desencriptar;
 
 function copiar(){
@@ -24,5 +24,5 @@ function copiar(){
     alert("copiado");
 }
 
-var btn_Copiar = document.getElementById("botoncopiar");
+var btn_Copiar = document.getElementById("btnCopiar");
 btn_Copiar.onclick = copiar;
