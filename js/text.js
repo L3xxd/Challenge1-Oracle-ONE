@@ -1,6 +1,6 @@
 
 // function([string1, string2],target id,[color1,color2])    
-consoleText(['Encriptar.', 'Desencriptar', 'JavaScript.', 'Oracle ONE.'], 'text',['#FF2626','#26DEFF','#FFFC3F', '#FD5714']);
+consoleText(['ENCRIPTAR.', 'DESENCRIPTAR', 'JAVASCRIPT.', 'ORACLE ONE.'], 'text',['#FF2626','#26DEFF','#FFFC3F', '#FD5714']);
 
 function consoleText(words, id, colors) {
  if (colors === undefined) colors = ['#fff'];

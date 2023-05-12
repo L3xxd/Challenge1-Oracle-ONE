@@ -1,0 +1,13 @@
+Page Layers :
+
+-> (0)
+Capa dedicada configurar variables, fuentes, recursos y Media Query's globales. 
+
+-> (1)
+Capa dedicada para las secciones de la pagina.
+* Header
+* Main
+* Footer
+
+-> (2)
+Capa dedicada para los hijos de la capa anterior.

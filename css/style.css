@@ -1,21 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+/* ->(0) Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-/* --[Global]-- */
+@font-face {
+  font-family: font;
+  src: url(../trash/font.ttf);
+}
+/* ->(0) Global */
 html,
 body {
   height: 100%;
   margin: 0;
   background: #1e1e1e;
-  font-family: "Press Start 2P", cursive;
+  font-family: font;
 }
 .main-container {
-  height: 130vh;
+  height: 140vh;
 }
-/* --[Header]-- */
+/* ->(1) Header  */
 .console-container {
   color: #ffffff;
   text-align: center;
-  font-size: 26px;
+  font-size: 28px;
   line-height: 20px;
   height: 80%;
   width: 100%;
@@ -36,37 +40,35 @@ body {
   left: 10px;
 }
 .instructions {
-  font-family: "Poppins", sans-serif;
   position: relative;
   color: #d324ff;
   width: auto;
   font-size: 16px;
   display: flex;
   flex-wrap: wrap;
-
   flex-direction: column;
   border: white;
 }
-/* --[Main]-- */
+/* -> (1) Main */
 h2 {
   color: #1e8449;
   text-align: center;
 }
-.buttons-primary {
+/* -> (2) Buttons-container */
+.buttons-primary-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  gap: 60px;
+  gap: 30px;
 }
-
-.buttons-secondary {
+.buttons-secondary-container {
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
 }
-
-.button-pushable {
+/* -> (2) Buttons-style */
+.button-type-1 {
   width: 300px;
   position: relative;
   border: none;
@@ -79,7 +81,6 @@ h2 {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-
 .button-shadow {
   position: absolute;
   top: 0;
@@ -92,7 +93,6 @@ h2 {
   transform: translateY(2px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
-
 .button-edge {
   position: absolute;
   top: 0;
@@ -108,9 +108,8 @@ h2 {
     hsl(340deg 100% 16%) 100%
   );
 }
-
 .button-front {
-  font-family: "Press Start 2P", cursive;
+  font-family: font;
   display: block;
   position: relative;
   padding: 12px 27px;
@@ -122,43 +121,34 @@ h2 {
   transform: translateY(-4px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
-
-.button-pushable:hover {
+.button-type-1:hover {
   filter: brightness(110%);
   -webkit-filter: brightness(110%);
 }
-
-.button-pushable:hover .button-front {
+.button-type-1:hover .button-front {
   transform: translateY(-6px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-
-.button-pushable:active .button-front {
+.button-type-1:active .button-front {
   transform: translateY(-2px);
   transition: transform 34ms;
 }
-
-.button-pushable:hover .button-shadow {
+.button-type-1:hover .button-shadow {
   transform: translateY(4px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-
-.button-pushable:active .button-shadow {
+.button-type-1:active .button-shadow {
   transform: translateY(1px);
   transition: transform 34ms;
 }
 
-.button-pushable:focus:not(:focus-visible) {
+.button-type-1:focus:not(:focus-visible) {
   outline: none;
 }
-
-
-
-.btn-rgb {
+.button-type-2 {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   padding-top: 20px;
-
   padding: 0.6em 2em;
   border: none;
   outline: none;
@@ -173,7 +163,7 @@ h2 {
   touch-action: manipulation;
 }
 
-.btn-rgb:before {
+.button-type-2:before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -196,12 +186,11 @@ h2 {
   -webkit-filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  animation: glowing-button-85 20s linear infinite;
+  animation: glowing-button-type-2 20s linear infinite;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
-
-@keyframes glowing-button-85 {
+@keyframes glowing-button-type-2 {
   0% {
     background-position: 0 0;
   }
@@ -212,8 +201,7 @@ h2 {
     background-position: 0 0;
   }
 }
-
-.btn-rgb:after {
+.button-type-2:after {
   z-index: -1;
   content: "";
   position: absolute;
@@ -224,38 +212,188 @@ h2 {
   top: 0;
   border-radius: 10px;
 }
-
-/* --[Text-Areas]-- */
-
+/* ->(3) Notification of copy element */
+.green-alert{
+  background: #C5F3D7;
+  padding: 20px 40px;
+  min-width: 100px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-radius: 4px;
+  border-left: 8px solid #2DD06D;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.green-alert.green-showAlert{
+  opacity: 1;
+  pointer-events: auto;
+}
+.green-alert.green-show{
+  animation: show_slide 1s ease forwards;
+}
+@keyframes show_slide {
+  0%{
+    transform: translateX(100%);
+  }
+  40%{
+    transform: translateX(-10%);
+  }
+  80%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-10px);
+  }
+}
+.green-alert.green-hide{
+  animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+  0%{
+    transform: translateX(-10px);
+  }
+  40%{
+    transform: translateX(0%);
+  }
+  80%{
+    transform: translateX(-10%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+.green-alert .fa-check-circle{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #29AF5D;
+  font-size: 30px;
+}
+.green-alert .green-msg{
+  padding: 0 20px;
+  font-size: 18px;
+  color: #29AF5D;
+  font-family: 'Poppins', sans-serif;
+}
+.green-alert .green-close-btn{
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #94EAB9;
+  padding: 20px 18px;
+  cursor: pointer;
+}
+.green-alert .green-close-btn .fas{
+  color: #29AF5D;
+  font-size: 22px;
+  line-height: 40px;
+}
+/* ->(3) Notification of error element */
+.orange-alert{
+  background: #ffdb9b;
+  padding: 20px 40px;
+  min-width: 100px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-radius: 4px;
+  border-left: 8px solid #ffa502;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.orange-alert.orange-showAlert{
+  opacity: 1;
+  pointer-events: auto;
+}
+.orange-alert.orange-show{
+  animation: show_slide 1s ease forwards;
+}
+@keyframes show_slide {
+  0%{
+    transform: translateX(100%);
+  }
+  40%{
+    transform: translateX(-10%);
+  }
+  80%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-10px);
+  }
+}
+.orange-alert.orange-hide{
+  animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+  0%{
+    transform: translateX(-10px);
+  }
+  40%{
+    transform: translateX(0%);
+  }
+  80%{
+    transform: translateX(-10%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+.orange-alert .fa-exclamation-circle{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ce8500;
+  font-size: 30px;
+}
+.orange-alert .orange-msg{
+  padding: 0 20px;
+  font-size: 18px;
+  color: #ce8500;
+  font-family: 'Poppins', sans-serif;
+}
+.orange-alert .orange-close-btn{
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffd080;
+  padding: 20px 18px;
+  cursor: pointer;
+}
+.orange-alert .orange-close-btn:hover{
+  background: #ffc766;
+}
+.orange-alert .orange-close-btn .fas{
+  color: #ce8500;
+  font-size: 22px;
+  line-height: 40px;
+}
+/* ->(2)-Text-Areas */
 textarea {
+  font-size: 18px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   max-width: 400px;
-  background-color: #2d2d2d;
+  background: #1e1e1e;
   color: #ffffff;
-  border-radius: 5px;
-  outline: none;
+  border: none;
+  outline: none; 
   resize: none;
 }
-
 textarea::-webkit-scrollbar {
   width: 0px;
 }
-input {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #2d2d2d;
-  color: #ffffff;
-  border-radius: 5px;
-  outline: none;
-  resize: none;
-}
 
-/* --[Footer]-- */
-
+/* ->(1)-Footer */
 section.footer-container {
   font-family: "Poppins", sans-serif;
   font-family: 18px;
@@ -286,6 +424,10 @@ footer.bottom {
   padding: 20px 0;
   justify-content: space-between;
 }
+.company{
+  text-decoration: none;
+  color:#9e9e9e;
+}
 footer.top .links {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -300,7 +442,6 @@ footer.top .links {
   text-decoration: none;
   color: white;
 }
-
 .legal {
   font-size: 18px;
 }
@@ -317,9 +458,7 @@ footer.bottom .links {
 footer.bottom .links > a {
   font-size: 24px;
 }
-
-/* Media Querys */
-
+/* -> (0) Media Querys  */
 @media (width < 620px) {
   footer {
     flex-direction: column;
@@ -340,7 +479,6 @@ footer.bottom .links > a {
     gap: 20px;
   }
 }
-
 @media (width >= 620px) {
   footer {
     margin: 0 auto;
@@ -357,7 +495,6 @@ footer.bottom .links > a {
     height: 400px;
   }
 }
-
 @media (width < 420px) {
   footer {
     text-align: center;

@@ -1,96 +1,106 @@
-<!--Version 2.1-->
+<!--Version 2.3-->
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <title>Encriptador</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" type="image/png" href="./trash/favicon.png" />
-    <title>Encriptador</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
   <body>
     <section class="main-container">
-      <header class="header">
+      <header>
         <div class="console-container">
           <span id="text"></span>
           <div class="console-underscore" id="console">&#95;</div>
         </div>
         <div class="instructions">
           <ul>
-            <li>Solo se permiten letras minúsculas.</li>
-            <li>Sin acentos ni caracteres especiales.</li>
+            <li>SOLO SE PERMITEN LETRAS MINUSCULAS.</li> 
+            <li>SIN ACENTOS NI CARACTERES ESPECIALES.</li>
           </ul>
         </div>
         <script src="./js/text.js"></script>
       </header>
-
       <div class="main">
+        
         <div class="textArea_Entrada">
-          <h2>Entrada de Datos</h2>
-          <textarea
-            placeholder="Escribre tu texto aqui..."
-            id="textoValor"
-            class="input"
-            type="text"
-            name="textoValor"
-          ></textarea>
-          <script>
-            const input = document.getElementById("textoValor");
-            input.addEventListener("keyup", (e) => {
-              input.style.height = "auto";
-              let scHeight = e.target.scrollHeight;
-              input.style.height = `${scHeight}px`;
-            });
-          </script>
+          <h2>ENTRADA DE DATOS</h2>
+          <form id="form-input">
+            <textarea
+              placeholder="Escribre tu texto aqui..."
+              id="textoValor"
+              class="input"
+              type="text"
+              name="textoValor"
+              
+            ></textarea>
+            <script>
+              const input = document.getElementById("textoValor");
+                input.addEventListener("keyup", (e) => {
+                input.style.height = "auto";
+                let scHeight = e.target.scrollHeight;
+                input.style.height = `${scHeight}px`;
+              });
+            </script>
+          </form>
         </div>
-
         <div class="textArea_Salida">
-          <h2>Salida de Datos</h2>
-          <textarea
-            rows="10"
-            readonly
-            class="texto_final"
-            type="text"
-            id="textoFinal"
-          >
-          </textarea>
+          <h2>SALIDA DE DATOS</h2>
+          <form id="form-output">
+            <textarea
+              id="textoFinal"
+              rows="5"
+              readonly
+              class="texto_final"
+              type="text"
+            >
+            </textarea>
+          </form>
         </div>
         <br />
       </div>
-      <div class="buttons-secondary">
-        <button class="btn-rgb" role="button">
+      <div class="buttons-secondary-container">
+        <button id="btnBorrar" class="button-type-2" role="button">
           <i class="fa-solid fa-trash"></i>
-          Borrar
+          BORRAR
         </button>
       </div>
-
-      <div class="buttons-primary">
-        <button id="btnEncriptar" class="button-pushable" role="button">
+      <div class="buttons-primary-container">
+        <button id="btnEncriptar" class="button-type-1" role="button">
           <span class="button-shadow"></span>
           <span class="button-edge"></span>
           <span class="button-front text">ENCRIPTAR</span>
         </button>
-        <button id="btnDesencriptar" class="button-pushable" role="button">
+        <button id="btnDesencriptar" class="button-type-1" role="button">
           <span class="button-shadow"></span>
           <span class="button-edge"></span>
           <span class="button-front text">DESENCRIPTAR</span>
         </button>
-        <button id="btnCopiar" class="button-pushable" role="button">
+        <button id="btnCopiar" class="button-type-1" role="button">
           <span class="button-shadow"></span>
           <span class="button-edge"></span>
-          <span class="button-front text">COPTAR</span>
+          <span class="button-front text">COPIAR</span>
         </button>
+        <div class="green-alert hide">
+          <span class="fas fa-check-circle"></span>
+          <span class="green-msg">Texto copiado!</span>
+          <div class="green-close-btn">
+             <span class="fas fa-times"></span>
+          </div>
+       </div>
+       <div class="orange-alert hide">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="orange-msg">Datos inválidos!</span>
+        <div class="orange-close-btn">
+           <span class="fas fa-times"></span>
+        </div>
+     </div>
       </div>
-      
-
       <script src="./js/logica.js"></script>
     </section>
     <section class="footer-container">
@@ -98,10 +108,10 @@
         <img src="./trash/logo.svg" width="192" height="140" fill="none" />
         <div class="links">
           <div>
-            <p>Oracle ONE</p>
+            <a class="company" target="_blank" href="https://www.oracle.com/mx/education/oracle-next-education/">Oracle ONE</a>
           </div>
           <div>
-            <p>Alura</p>
+            <a class="company" target="_blank" href="https://www.aluracursos.com/">Alura</a>
           </div>
         </div>
         <div><p>Code By: Alejandro Balderas Rios</p></div>
